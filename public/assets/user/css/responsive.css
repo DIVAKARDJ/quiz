@@ -1,0 +1,714 @@
+  /* (1366x768) WXGA Display */
+
+  @media screen and (min-width: 1366px) and (max-width: 1919px) {
+      .about-shape-1 {
+          position: absolute;
+          left: -37px;
+          top: -46px;
+          z-index: -1;
+          width: 50%;
+          height: 50%;
+      }
+
+      .hero-img {
+          width: 100%;
+      }
+
+      .work-right {
+          padding: 100px 0;
+          width: 35%;
+      }
+
+      .work-left {
+          width: 60%;
+          padding-left: 40px;
+          padding-right: 27px;
+      }
+
+      .hero-img {
+          bottom: -30%;
+      }
+  }
+
+  @media screen and (min-width: 1200px) and (max-width: 1366px) {
+      .hero-img {
+          width: 100%;
+      }
+
+      .about-section .right-content {
+          padding: 0;
+      }
+
+      .about-shape-1 {
+          top: 0;
+      }
+
+      .about-shape-2 {
+          top: 14px;
+      }
+
+      .work-right {
+          padding: 100px 0;
+          width: 35%;
+      }
+
+      .work-left {
+          width: 60%;
+          padding-left: 40px;
+          padding-right: 27px;
+      }
+      .hero-img {
+        bottom: -50%;
+    }
+      
+  }
+
+  /* Normal desktop :992px. */
+
+  @media (min-width: 992px) and (max-width: 1197px) {
+    .hero-img {
+        width: 100%;
+        bottom: -55%;
+    }
+
+      .hero-style-1 .hero-caption h2 {
+          font-size: 36px;
+          line-height: 53px;
+      }
+
+      .hero-style-1 {
+          height: 770px;
+          max-height: 770px;
+      }
+
+      .about-section .right-content {
+          padding: 0;
+      }
+
+      .about-shape-1 {
+          left: -37px;
+          top: 27px;
+      }
+
+      .about-shape-2 {
+          top: 84px;
+      }
+
+      .work-single {
+          padding: 41px 10px;
+      }
+
+      .download-img {
+          width: 80%;
+          text-align: right;
+          margin: auto;
+      }
+
+      .modal-dialog-centered {
+          max-width: 800px;
+      }
+
+      .category-single {
+          padding: 20px 3px;
+      }
+
+      .question-item .que-btn a {
+          font-size: 25px;
+      }
+
+      .question-item h4 {
+          font-size: 25px;
+      }
+
+      .pro-item {
+          padding: 15px;
+      }
+  }
+
+  /* Normal desktop :991px. */
+
+  @media (min-width: 768px) and (max-width: 991px) {
+
+      .hero-img {
+          display: none;
+      }
+
+      .hero-style-1 {
+          height: 700px;
+          max-height: 700px;
+      }
+
+      .hero-style-1 .hero-caption h2 {
+          font-size: 45px;
+          line-height: 55px;
+      }
+
+      .hero-caption {
+          padding-bottom: 65px;
+      }
+
+      .about-section .content-area {
+          padding-bottom: 0;
+          padding-top: 40px;
+      }
+
+      .bg-animate-shape .shape-b {
+          display: none;
+      }
+
+      .about-section .right-content {
+          padding: 0;
+      }
+
+      .work-right {
+          padding: 0 30px;
+          width: 100%;
+      }
+
+      .work-left {
+          width: 100%;
+          padding-left: 30px;
+          padding-right: 30px;
+      }
+
+      .features-area {
+          background: #fafbff;
+          padding: 70px 0 45px;
+          height: 100%;
+      }
+
+      .footer-single {
+          padding-left: 0;
+          margin-bottom: 30px;
+      }
+
+      .footer-item-2 {
+          padding-left: 0;
+      }
+
+      .footer-text {
+          margin-bottom: 30px;
+      }
+
+      .work-single-5,
+      .work-single-3 {
+          margin-top: 0;
+      }
+
+      .download-area {
+          padding: 25px 0 70px;
+          background: #fafbff;
+      }
+
+      .download-text {
+          margin-bottom: 100px;
+      }
+
+      .footer-top {
+          padding: 215px 0 50px;
+      }
+
+      .modal-dialog-centered {
+          max-width: 670px;
+      }
+
+      .category-sub-area {
+          padding-left: 30px;
+      }
+
+      .profile-menu .submenu {
+          left: -50px;
+      }
+
+      .chemistry-wrap {
+          padding: 50px 25px;
+      }
+
+      .chemistry-item ul li {
+          padding: 30px;
+      }
+
+      .question-item .que-btn a {
+          font-size: 25px;
+      }
+
+      .question-item h4 {
+          font-size: 25px;
+      }
+
+      .point-moadal {
+          max-width: 94%;
+      }
+
+      .profile-item-header {
+          margin-top: 30px;
+      }
+
+      .leader-wrap {
+          overflow: scroll;
+          overflow-y: hidden;
+      }
+
+      .leader-wrap table {
+          width: 800px;
+      }
+
+      .user-header .nav-tabs li a {
+          width: 180px;
+      }
+      .question-btn button {
+        width: 290px;
+    }
+  }
+
+  /* small mobile :576px. */
+
+  @media (min-width: 576px) and (max-width: 767px) {
+      .hero-img {
+          display: none;
+      }
+
+      .hero-style-1 {
+          height: 700px;
+          max-height: 700px;
+      }
+
+      .hero-style-1 .hero-caption h2 {
+          font-size: 45px;
+          line-height: 55px;
+      }
+
+      .hero-caption {
+          padding-bottom: 65px;
+      }
+
+      .about-section .content-area {
+          padding-bottom: 0;
+          padding-top: 40px;
+      }
+
+      .bg-animate-shape .shape-b {
+          display: none;
+      }
+
+      .about-section .right-content {
+          padding: 0;
+      }
+
+      .work-right {
+          padding: 0 30px;
+          width: 100%;
+      }
+
+      .work-left {
+          width: 100%;
+          padding-left: 30px;
+          padding-right: 30px;
+      }
+
+      .features-area {
+          background: #fafbff;
+          padding: 74px 0 45px;
+          height: 100%;
+      }
+
+      .footer-single {
+          padding-left: 0;
+          margin-bottom: 30px;
+      }
+
+      .footer-item-2 {
+          padding-left: 0;
+      }
+
+      .footer-text {
+          margin-bottom: 30px;
+      }
+
+      .work-single-5,
+      .work-single-3 {
+          margin-top: 0;
+      }
+
+      .download-area {
+          padding: 30px 0 60px;
+          background: #fafbff;
+      }
+
+      .download-text {
+          margin-bottom: 100px;
+      }
+
+      .footer-top {
+          padding: 225px 0 36px;
+      }
+
+      .modal-dialog-centered {
+          max-width: 470px;
+      }
+
+      .unlock-box,.modal-dialog-question .unlock-box {
+          width: 340px;
+      }
+
+      .category-sub-area {
+          padding-left: 30px;
+      }
+
+      .unlock-btn button {
+          height: 50px;
+          line-height: 50px;
+          font-size: 16px;
+      }
+
+      .header-area-2 .logo {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .header-profile {
+          text-align: center;
+          margin-top: 15px;
+      }
+
+      .profile-menu .submenu {
+          left: 110px;
+      }
+
+      .chemistry-wrap {
+          padding: 50px 25px;
+      }
+
+      .chemistry-item ul li {
+          padding: 30px;
+      }
+
+      .question-item h4 {
+          font-size: 18px;
+      }
+
+      .question-header ul {
+          padding: 0 40px 47px;
+      }
+
+      .point-moadal {
+          max-width: 92%;
+      }
+
+      .pro-item {
+          margin-bottom: 30px;
+      }
+
+      .leader-wrap {
+          overflow: scroll;
+          overflow-y: hidden;
+      }
+
+      .leader-wrap table {
+          width: 600px;
+      }
+
+      .user-header .nav-tabs li a {
+          margin-bottom: 10px;
+      }
+      .question-btn {
+        flex-wrap: wrap;
+    }
+    
+    .cmt-button a {
+        left: 15px;
+        top: 15px;
+    }
+    
+    .unlock-btn {
+        flex-wrap: wrap;
+    }
+    .unlock-btn .btn-cl {
+        margin-left: -15px;
+        margin-top: 10px;
+    }
+
+  }
+
+  /* extra small mobile 320px. */
+
+  @media (max-width: 575px) {
+
+      .hero-img {
+          display: none;
+      }
+
+      .hero-style-1 {
+          height: 610px;
+          max-height: 610px;
+      }
+
+      .hero-style-1 .hero-caption h2 {
+          font-size: 45px;
+          line-height: 55px;
+      }
+
+      .hero-caption {
+          padding-bottom: 130px;
+      }
+
+      .about-section .content-area {
+          padding-bottom: 0;
+          padding-top: 0;
+      }
+
+      .bg-animate-shape .shape-b {
+          display: none;
+      }
+
+      .about-section .right-content {
+          padding: 0;
+      }
+
+      .work-right {
+          padding: 0 30px;
+          width: 100%;
+      }
+
+      .work-left {
+          width: 100%;
+          padding-left: 30px;
+          padding-right: 30px;
+      }
+
+      .features-area {
+          background: #fafbff;
+          padding: 52px 0 45px;
+          height: 100%;
+      }
+
+      .footer-single {
+          padding-left: 0;
+          margin-bottom: 30px;
+      }
+
+      .footer-item-2 {
+          padding-left: 0;
+      }
+
+      .footer-text {
+          margin-bottom: 30px;
+      }
+
+      .work-single-5,
+      .work-single-3 {
+          margin-top: 0;
+      }
+
+      .download-area {
+          padding: 10px 0 100px;
+          background: #fafbff;
+      }
+
+      .download-text {
+          margin-bottom: 100px;
+      }
+
+      .download-btn {
+          flex-wrap: wrap;
+      }
+
+      .hero-style-1 .hero-caption h2 {
+          font-size: 23px;
+          line-height: 28px;
+      }
+
+      .hero-style-1 .hero-caption p {
+          font-size: 14px;
+          line-height: 22px;
+      }
+
+      .section-title h2 {
+          font-size: 25px;
+          line-height: 28px;
+      }
+
+      .section-title span {
+          font-size: 16px;
+      }
+
+      .bg-animate-shape .shape-n {
+          display: none;
+      }
+
+      .bg-animate-shape .shape1,
+      .bg-animate-shape .shape5 {
+          top: -120px;
+          left: 15%;
+      }
+
+      .download-btn .btn-1 a {
+          margin-right: 0;
+          margin-bottom: 20px;
+      }
+
+      .footer-top {
+          padding: 268px 0 20px;
+      }
+
+      .work-single span {
+        left: 19%;
+        top: -14%;
+    }
+
+      .category-sub-area {
+          padding-left: 30px;
+      }
+
+      .modal-dialog-centered {
+          max-width: 94%;
+          padding: 15px;
+      }
+
+      .point-moadal {
+          max-width: 85%;
+      }
+
+      .unlock-box,.modal-dialog-question .unlock-box {
+          width: 240px;
+      }
+
+      .unloack-header ul li {
+          font-size: 14px;
+      }
+
+      .unlock-btn button {
+          height: 50px;
+          line-height: 50px;
+          font-size: 16px;
+      }
+
+      .header-area-2 .logo {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .header-profile {
+          text-align: center;
+          margin-top: 15px;
+      }
+
+      .chemistry-wrap {
+          padding: 50px 25px;
+      }
+
+      .chemistry-item ul li {
+          padding: 20px;
+      }
+
+      .chemistry-item h2 {
+          font-size: 20px;
+          margin-bottom: 30px;
+      }
+
+      .header-profile ul li a {
+          padding: 20px 0;
+      }
+
+      .question-item .que-btn a {
+          font-size: 20px;
+          margin-bottom: 30px;
+      }
+
+      .question-item h4 {
+          font-size: 18px;
+      }
+
+      .question-header ul {
+          padding: 0 4px 47px;
+      }
+
+      .point-moadal .modal-content {
+          padding: 105px 30px;
+      }
+
+      .pro-item {
+          margin-bottom: 30px;
+      }
+
+      .pro-chart {
+          padding: 10px;
+      }
+
+      .profile-wrap {
+          padding: 15px;
+      }
+
+      .pro-details {
+          padding: 35px 13px 29px;
+      }
+
+      .pro-item {
+          padding: 10px;
+      }
+
+      .leader-wrap {
+          overflow: scroll;
+          overflow-y: hidden;
+      }
+
+      .leader-wrap table {
+          width: 800px;
+      }
+
+      .leader-wrap {
+          padding: 5px;
+      }
+
+      .user-header .nav-tabs li a {
+          margin-bottom: 10px;
+      }
+
+      .submit-btn-area button {
+          width: 215px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 18px;
+      }
+
+      .coin-wrap {
+          padding: 50px 10px;
+      }
+
+      .coin-header {
+          padding: 20px 10px;
+      }
+
+      .coin-header ul li {
+          font-size: 16px;
+      }
+      .question-btn {
+        margin-top: 0;
+        flex-wrap: wrap;
+    }
+    .question-btn button {
+        width: 240px;
+    }
+    .point-m .point-b {
+        width: 212px;
+        height: 135px;
+    }
+    .point-b span {
+        font-size: 22px;
+        line-height: 15px;
+    }
+    .cmt-button a {
+        left: 15px;
+        top: 15px;
+    }
+    .unlock-btn {
+        flex-wrap: wrap;
+    }
+    .unlock-btn .btn-cl {
+        margin-left: -15px;
+        margin-top: 10px;
+    }
+  }
+
+  /* Large Mobile :480px. */
+  @media only screen and (min-width: 325px) and (max-width: 590px) {}
