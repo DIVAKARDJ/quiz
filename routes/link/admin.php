@@ -95,4 +95,11 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('withdrawal-approve/{id}', 'WithdrawalController@withdrawalApprove')->name('withdrawalApprove');
     Route::get('withdrawal-decline/{id}', 'WithdrawalController@withdrawalDecline')->name('withdrawalDecline');
     Route::get('withdraw/{id}', 'WithdrawalController@withdraw')->name('withdraw');
+
+    // book category
+    Route::get('book-category', 'BookCategoryController@bookCategoryList')->name('bookCategoryList');
+    Route::get('add-book-category', 'BookCategoryController@addBookCategory')->name('addBookCategory');
+    Route::get('edit-book-category/{id}', 'BookCategoryController@editBookCategory')->name('editBookCategory');
+    Route::post('save-book-category', 'BookCategoryController@saveBookCategory')->name('saveBookCategory');
+    Route::get('delete-book-category/{bookCategory}', 'BookCategoryController@deleteBookCategegory')->name('deleteBookCategegory');
 });

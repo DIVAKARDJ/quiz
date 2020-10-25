@@ -992,3 +992,8 @@ ul#metismenu li > .left-menu-p li:hover{
 /*activity menu icon*/
 .activity-menus li span {
 }
+
+.datatable-img{
+    height: 50px;
+    widows: 50px;
+}

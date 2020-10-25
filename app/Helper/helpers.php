@@ -169,6 +169,10 @@ function path_question_image()
 {
     return 'uploaded_file/files/img/question/';
 }
+function path_book_category_image()
+{
+    return 'uploaded_file/files/img/book_category/';
+}
 function path_question_option1_image()
 {
     return 'uploaded_file/files/img/question/options/option1/';
