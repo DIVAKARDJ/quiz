@@ -29,11 +29,11 @@ class BookCategorySaveRequest extends FormRequest
         $rules = [
             'name' => ['required', Rule::unique('book_categories', 'name')],
             'status' => 'required',
+            'edit_id' => '',
             'image' => 'mimes:jpeg,jpg,JPG,png,PNG,gif|max:5000'
         ];
         if (!empty($this->edit_id)) {
             $rules['name'] = ['required', Rule::unique('book_categories', 'name')->ignore($this->edit_id, 'id')];
-            $rules['edit_id'] = '';
         }
         return $rules;
     }

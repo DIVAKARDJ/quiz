@@ -63,11 +63,7 @@ class BookCategoryController extends Controller
                 $data['image'] = fileUpload($request['image'], path_book_category_image(), $old_img);
             }
             if (!empty($request->edit_id)) {
-                $bookcategory = new BookCategory;
-                $bookcategory->findOrFail($request->edit_id);
-                $bookcategory->fill($data);
-                $update = $bookcategory->save();
-//                dd($update);
+                $update = BookCategory::find($request->edit_id)->update($data);
                 if ($update) {
                     return redirect()->back()->with('success', __('Book Category Updated Successfully'));
                 }
@@ -90,7 +86,21 @@ class BookCategoryController extends Controller
     public function deleteBookCategegory(BookCategory $bookCategory)
     {
         $bookCategory->delete();
-        
+
         return redirect(route('bookCategoryList'))->with('success', 'Book Category Deleted Successfully');
+    }
+
+    public function bookCategoryChangeStatus($id)
+    {
+        $bookCategory = BookCategory::findOrFail($id);
+       
+        if ($bookCategory->status == 1) {
+            $bookCategory->status = false;
+            $bookCategory->update();
+        } else {
+            $bookCategory->status = true;
+            $bookCategory->update();
+        }
+        return redirect(route('bookCategoryList'))->with('success', 'Book Category Status Updated');
     }
 }

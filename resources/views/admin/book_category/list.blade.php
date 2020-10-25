@@ -66,7 +66,7 @@
                                                 @endif
                                             </td>
                                             <td><span @if($item->status == 1) class="text-success"
-                                                      @else class="text-danger" @endif>{{ statusAction($item->status) }}</span>
+                                                      @else class="text-danger" @endif>{{ statusType($item->status) }}</span>
                                             </td>
                                             <td>
                                                 <ul class="d-flex justify-content-center">
@@ -80,6 +80,15 @@
                                                         <li class=" ml-2 qz-edit"><span class="flaticon-pencil"></span>
                                                         </li>
                                                     </a>
+                                                    @if($item->status == STATUS_INACTIVE)
+                                                        <a href="{{ route('bookCategoryChangeStatus', $item->id) }}" data-toggle="tooltip" title="Activate">
+                                                            <li class="ml-2 qz-deactive"><span class="flaticon-check-mark"></span></li>
+                                                        </a>
+                                                    @else
+                                                        <a href="{{ route('bookCategoryChangeStatus', $item->id) }}" data-toggle="tooltip" title="Dectivate">
+                                                            <li class="ml-2 qz-check"><span class="flaticon-check-mark"></span></li>
+                                                        </a>
+                                                    @endif
                                                     <a href="{{ route('deleteBookCategegory', $item->id) }}"
                                                        data-toggle="tooltip" title="Delete"
                                                        onclick="return confirm('Are you sure to delete this ?');">
