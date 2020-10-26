@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3690619eb05898ba0b020d62259d99c",
+    "content-hash": "6bdaea43c4e514bd0a893bf49a10ed63",
     "packages": [
         {
             "name": "akibtanjim/currency-converter",
@@ -9512,10 +9512,10 @@
     "stability-flags": {
         "appointer/swaggervel": 20,
         "infyomlabs/adminlte-templates": 20,
+        "infyomlabs/generator-builder": 20,
         "infyomlabs/laravel-generator": 20,
         "infyomlabs/swagger-generator": 20,
-        "intervention/image": 20,
-        "infyomlabs/generator-builder": 20
+        "intervention/image": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

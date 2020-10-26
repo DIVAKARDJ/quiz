@@ -7,7 +7,6 @@ use App\Model\CategoryUnlock;
 use App\Model\Question;
 use App\Model\QuestionOption;
 use App\Model\UserAnswer;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -173,6 +172,12 @@ function path_book_category_image()
 {
     return 'uploaded_file/files/img/book_category/';
 }
+
+function path_book_pdf()
+{
+    return 'uploaded_file/files/pdf/book_pdf/';
+}
+
 function path_question_option1_image()
 {
     return 'uploaded_file/files/img/question/options/option1/';

@@ -17,11 +17,16 @@
             <li class="@if(isset($menu) && $menu == 'bookCategory') qz-active @endif"><a
                         href="{{ route('bookCategoryList') }}">
                     <span class="flaticon-menu"></span>
-                Book Category</a>
+                    Book Category</a>
             </li>
-            <li class="@if(isset($menu) && $menu == 'posts') qz-active @endif">
-                <a href="{{ route('admin.posts.index') }}">
-                    <span class="flaticon-statistics"></span>{{__('Posts')}}
+            <li class="@if(isset($menu) && $menu == 'books') qz-active @endif">
+                <a href="{{ route('books.index') }}">
+                    <span class="flaticon-statistics"></span>{{__('Books')}}
+                </a>
+            </li>
+            <li class="@if(isset($menu) && $menu == 'paperCategories') qz-active @endif">
+                <a href="{{ route('paperCategories.index') }}">
+                    <span class="flaticon-statistics"></span>{{__('Paper Categories')}}
                 </a>
             </li>
             <li class="@if(isset($menu) && $menu == 'category') qz-active @endif"><a

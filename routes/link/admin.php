@@ -100,11 +100,15 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('book-category', 'BookCategoryController@bookCategoryList')->name('bookCategoryList');
     Route::get('add-book-category', 'BookCategoryController@addBookCategory')->name('addBookCategory');
     Route::get('edit-book-category/{id}', 'BookCategoryController@editBookCategory')->name('editBookCategory');
-    Route::get('book-category-change-status/{id}', 'BookCategoryController@bookCategoryChangeStatus')->name('bookCategoryChangeStatus');
+    Route::get('book-category-change-status/{id}',
+        'BookCategoryController@bookCategoryChangeStatus')->name('bookCategoryChangeStatus');
     Route::post('save-book-category', 'BookCategoryController@saveBookCategory')->name('saveBookCategory');
-    Route::get('delete-book-category/{bookCategory}', 'BookCategoryController@deleteBookCategegory')->name('deleteBookCategegory');
+    Route::get('delete-book-category/{bookCategory}',
+        'BookCategoryController@deleteBookCategegory')->name('deleteBookCategegory');
 
     Route::resource('books', 'BookController');
-    Route::resource('posts', 'PostController', ["as" => 'admin']);
-   
+    Route::resource('paperCategories', 'PaperCategoryController');
+    Route::get('paper-category-change-status/{id}',
+        'PaperCategoryController@paperCategoryChangeStatus')->name('paperCategoryChangeStatus');
+
 });

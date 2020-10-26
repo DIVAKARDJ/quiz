@@ -22,5 +22,6 @@ class AdminSettingSeeder extends Seeder
         AdminSetting::create(['slug' => 'company_name', 'value' => 'New Company']);
         AdminSetting::create(['slug' => 'primary_email', 'value' => 'info@email.com']);
         AdminSetting::create(['slug' => 'user_registration', 'value' => 1]);
+        AdminSetting::create(['slug' => 'is_authenticated', 'value' => LICENSE_VERIFIED]);
     }
 }
