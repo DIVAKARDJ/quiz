@@ -1,0 +1,13 @@
+<div class="row">
+$FIELDS$
+</div>
+
+<!-- Submit Field -->
+<div class="row">
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary btn-block btn-add">Save</button>
+    </div>
+    <div class="col-md-2">
+        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-block btn-cancel">Cancel</a>
+    </div>
+</div>

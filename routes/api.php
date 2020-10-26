@@ -76,3 +76,7 @@ Route::group(['middleware' =>['auth:api','api.lang'],'namespace'=>'Api'],functio
     Route::get('coin-conversion-usd-to-rupee', 'CoinController@coinConversionUsdToRupee');
     
 });
+
+
+
+

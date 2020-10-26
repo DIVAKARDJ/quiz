@@ -180,6 +180,8 @@ return [
         RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
         Softon\Indipay\IndipayServiceProvider::class,
         AkibTanjim\Currency\CurrencyServiceProvider::class,
+        \InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
+
 
     ],
 

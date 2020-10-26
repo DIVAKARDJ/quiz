@@ -103,4 +103,8 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('book-category-change-status/{id}', 'BookCategoryController@bookCategoryChangeStatus')->name('bookCategoryChangeStatus');
     Route::post('save-book-category', 'BookCategoryController@saveBookCategory')->name('saveBookCategory');
     Route::get('delete-book-category/{bookCategory}', 'BookCategoryController@deleteBookCategegory')->name('deleteBookCategegory');
+
+    Route::resource('books', 'BookController');
+    Route::resource('posts', 'PostController', ["as" => 'admin']);
+   
 });

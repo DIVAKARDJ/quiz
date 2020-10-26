@@ -1,0 +1,29 @@
+<table id="category-table" class="table category-table table-bordered  text-center mb-0">
+    <thead>
+        <tr>
+            <th class="all" style="width: 20%;">{{__('SL.')}}</th>
+            $FIELD_HEADERS$
+            <th class="all" style="width: 15%;">{{__('Action')}}</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if(isset($$MODEL_NAME_PLURAL_CAMEL$[0]))
+        @php ($sl = 1)
+        @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
+            <tr>
+                <td>{{ $sl++ }}</td>
+                $FIELD_BODY$
+                <td>
+                    {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete']) !!}
+                    
+                        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}" class="datatabel-links text-info" data-toggle="tooltip" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}" class="datatabel-links text-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                        {!! Form::button('<i class="fa fa-trash-o"></i>', ['type' => 'submit', 'class' => 'datatabel-links text-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+            @endforeach
+        @endif
+    </tbody>
+</table>

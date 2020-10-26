@@ -1,0 +1,5 @@
+<li class="@if(isset($menu) && $menu == '$MODEL_NAME_PLURAL_CAMEL$') qz-active @endif">
+    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}">
+        <span class="flaticon-statistics"></span>{{__('$MODEL_NAME_PLURAL_HUMAN$')}}
+    </a>
+</li>
