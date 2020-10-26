@@ -29,6 +29,11 @@
                     <span class="flaticon-statistics"></span>{{__('Paper Categories')}}
                 </a>
             </li>
+            <li class="@if(isset($menu) && $menu == 'oldPapers') qz-active @endif">
+                <a href="{{ route('oldPapers.index') }}">
+                    <span class="flaticon-statistics"></span>{{__('Old Papers')}}
+                </a>
+            </li>
             <li class="@if(isset($menu) && $menu == 'category') qz-active @endif"><a
                         href="{{ route('qsCategoryList') }}"><span class="flaticon-menu"></span>{{__('Category')}} </a>
             </li>

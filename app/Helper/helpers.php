@@ -178,6 +178,11 @@ function path_book_pdf()
     return 'uploaded_file/files/pdf/book_pdf/';
 }
 
+function path_paper_pdf()
+{
+    return 'uploaded_file/files/pdf/paper_pdf/';
+}
+
 function path_question_option1_image()
 {
     return 'uploaded_file/files/img/question/options/option1/';

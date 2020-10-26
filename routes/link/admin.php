@@ -1,23 +1,23 @@
 <?php
 
-Route::group(['middleware' => ['auth', 'lang']], function() {
+Route::group(['middleware' => ['auth', 'lang']], function () {
     //profile setting
-    Route::get('/profile','Admin\ProfileController@userProfile')->name('userProfile');
-    Route::get('update-profile','Admin\ProfileController@editProfile')->name('editProfile');
-    Route::get('/password-change','Admin\ProfileController@passwordChange')->name('passwordChange');
-    Route::post('/update-profile','Admin\ProfileController@updateProfile')->name('updateProfile');
-    Route::post('/change-password','Admin\ProfileController@changePassword')->name('changePassword');
+    Route::get('/profile', 'Admin\ProfileController@userProfile')->name('userProfile');
+    Route::get('update-profile', 'Admin\ProfileController@editProfile')->name('editProfile');
+    Route::get('/password-change', 'Admin\ProfileController@passwordChange')->name('passwordChange');
+    Route::post('/update-profile', 'Admin\ProfileController@updateProfile')->name('updateProfile');
+    Route::post('/change-password', 'Admin\ProfileController@changePassword')->name('changePassword');
 });
 
-Route::group(['middleware' => ['auth', 'admin', 'lang'], 'namespace'=> 'Admin'], function() {
+Route::group(['middleware' => ['auth', 'admin', 'lang'], 'namespace' => 'Admin'], function () {
     Route::get('general-setting', 'SettingController@generalSetting')->name('generalSetting');
     Route::post('verify-envato-purchase-code', 'SettingController@verifyEnvatoCode')->name('verifyEnvatoCode');
 });
 
-Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespace'=> 'Admin'], function() {
+Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespace' => 'Admin'], function () {
     Route::get('app-setting', 'AppSettingController@appSetting')->name('appSetting');
     Route::post('app-settings-save', 'AppSettingController@appSettingSave')->name('app-settings-save');
-    
+
     Route::get('admin', 'DashboardController@adminDashboardView')->name('adminDashboardView');
     Route::get('/search', 'DashboardController@qsSearch')->name('qsSearch');
 
@@ -44,12 +44,14 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('question-category-list', 'CategoryController@qsCategoryList')->name('qsCategoryList');
     Route::get('question-sub-category-list-{id}', 'CategoryController@qsSubCategoryList')->name('qsSubCategoryList');
     Route::get('question-category-create', 'CategoryController@qsCategoryCreate')->name('qsCategoryCreate');
-    Route::get('question-sub-category-create/{id}', 'CategoryController@qsSubCategoryCreate')->name('qsSubCategoryCreate');
+    Route::get('question-sub-category-create/{id}',
+        'CategoryController@qsSubCategoryCreate')->name('qsSubCategoryCreate');
     Route::post('question-category-save', 'CategoryController@qsCategorySave')->name('qsCategorySave');
     Route::get('question-category-edit/{id}', 'CategoryController@qsCategoryEdit')->name('qsCategoryEdit');
     Route::get('question-category-delete/{id}', 'CategoryController@qsCategoryDelete')->name('qsCategoryDelete');
     Route::get('question-category-activate/{id}', 'CategoryController@qsCategoryActivate')->name('qsCategoryActivate');
-    Route::get('question-category-deactivate/{id}', 'CategoryController@qsCategoryDeactivate')->name('qsCategoryDeactivate');
+    Route::get('question-category-deactivate/{id}',
+        'CategoryController@qsCategoryDeactivate')->name('qsCategoryDeactivate');
 
     //Question
     Route::get('question-list', 'QuestionController@questionList')->name('questionList');
@@ -67,7 +69,8 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('payment-methods', 'PaymentController@paymentMethods')->name('paymentMethods');
     Route::get('payment-methods-create', 'PaymentController@paymentMethodsAdd')->name('paymentMethodsAdd');
     Route::post('payment-methods-save', 'PaymentController@paymentMethodsSave')->name('paymentMethodSave');
-    Route::post('payment-methods-status-change', 'PaymentController@changePaymentMethodStatus')->name('changePaymentMethodStatus');
+    Route::post('payment-methods-status-change',
+        'PaymentController@changePaymentMethodStatus')->name('changePaymentMethodStatus');
 
     // coins
     Route::get('coin-list', 'CoinController@coinList')->name('coinList');
@@ -86,11 +89,11 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('edit-web-feature-{id}', 'SettingController@editWebFeature')->name('editWebFeature');
     Route::get('delete-web-feature-{id}', 'SettingController@featureDelete')->name('featureDelete');
     Route::post('save-web-feature', 'SettingController@saveWebFeature')->name('saveWebFeature');
-    
+
     //Withdrawal
-   
+
     Route::get('withdrawal-list', 'WithdrawalController@withdrawalList')->name('withdrawalList');
-    
+
     Route::get('withdrawal-details/{id}', 'WithdrawalController@withdrawalDetails')->name('withdrawalDetails');
     Route::get('withdrawal-approve/{id}', 'WithdrawalController@withdrawalApprove')->name('withdrawalApprove');
     Route::get('withdrawal-decline/{id}', 'WithdrawalController@withdrawalDecline')->name('withdrawalDecline');
@@ -106,9 +109,15 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::get('delete-book-category/{bookCategory}',
         'BookCategoryController@deleteBookCategegory')->name('deleteBookCategegory');
 
+    //books routes
     Route::resource('books', 'BookController');
+
+    //papaerCategories route
     Route::resource('paperCategories', 'PaperCategoryController');
     Route::get('paper-category-change-status/{id}',
         'PaperCategoryController@paperCategoryChangeStatus')->name('paperCategoryChangeStatus');
+
+    // oldPapers route
+    Route::resource('oldPapers', 'OldPaperController');
 
 });

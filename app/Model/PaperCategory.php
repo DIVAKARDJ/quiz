@@ -44,5 +44,11 @@ class PaperCategory extends Model
         'status' => 'boolean',
     ];
 
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function oldPapers()
+    {
+        return $this->hasMany(OldPaper::class, 'paper_category_id');
+    }
 }
