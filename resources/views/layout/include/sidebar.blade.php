@@ -24,6 +24,11 @@
                     <span class="fa fa-book"></span>{{__('Books')}}
                 </a>
             </li>
+            <li class="@if(isset($menu) && $menu == 'posts') qz-active @endif">
+                <a href="{{ route('posts.index') }}">
+                    <span class="flaticon-statistics"></span>{{__('Posts')}}
+                </a>
+            </li>
             <li class="@if(isset($menu) && $menu == 'paperCategories') qz-active @endif">
                 <a href="{{ route('paperCategories.index') }}">
                     <span class="fa fa-list-alt"></span>{{__('Paper Categories')}}
@@ -89,4 +94,3 @@
 
 </div>
 <!-- End sidebar -->
-

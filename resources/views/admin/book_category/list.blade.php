@@ -58,9 +58,10 @@
                                             <td>{{ $item->name }}</td>
                                             <td>
                                                 @if($item->image)
-                                                <img class="datatable-img"
-                                                     src="{{ asset(path_book_category_image().$item->image) }}"
-                                                     alt="no image"/>
+                                                    <a href="{{ asset(path_book_category_image().$item->image)}}"
+                                                       target="_blank"><img class="datatable-img"
+                                                                            src="{{ asset(path_book_category_image().$item->image) }}"
+                                                                            alt="no image"/></a>
                                                 @else
                                                     N/A
                                                 @endif

@@ -11,43 +11,43 @@ return [
 
     'path' => [
 
-        'migration'         => database_path('migrations/'),
+        'migration' => database_path('migrations/'),
 
-        'model'             => app_path('Model/'),
+        'model' => app_path('Model/'),
 
-        'datatables'        => app_path('DataTables/'),
+        'datatables' => app_path('DataTables/'),
 
-        'repository'        => app_path('Repositories/'),
+        'repository' => app_path('Repositories/'),
 
-        'routes'            => base_path('routes/web.php'),
+        'routes' => base_path('routes/link/admin.php'),
 
-        'api_routes'        => base_path('routes/api.php'),
+        'api_routes' => base_path('routes/api.php'),
 
-        'request'           => app_path('Http/Requests/'),
+        'request' => app_path('Http/Requests/Admin/'),
 
-        'api_request'       => app_path('Http/Requests/API/'),
+        'api_request' => app_path('Http/Requests/API/'),
 
-        'controller'        => app_path('Http/Controllers/'),
+        'controller' => app_path('Http/Controllers/Admin/'),
 
-        'api_controller'    => app_path('Http/Controllers/API/'),
+        'api_controller' => app_path('Http/Controllers/API/'),
 
-        'repository_test'   => base_path('tests/Repositories/'),
+        'repository_test' => base_path('tests/Repositories/'),
 
-        'api_test'          => base_path('tests/APIs/'),
+        'api_test' => base_path('tests/APIs/'),
 
-        'tests'             => base_path('tests/'),
+        'tests' => base_path('tests/'),
 
-        'views'             => resource_path('views/'),
+        'views' => resource_path('views/admin/'),
 
-        'schema_files'      => resource_path('model_schemas/'),
+        'schema_files' => resource_path('model_schemas/'),
 
-        'templates_dir'     => resource_path('infyom/infyom-generator-templates/'),
+        'templates_dir' => resource_path('infyom/infyom-generator-templates/'),
 
-        'seeder'            => database_path('seeds/'),
+        'seeder' => database_path('seeds/'),
 
-        'database_seeder'   => database_path('seeds/DatabaseSeeder.php'),
+        'database_seeder' => database_path('seeds/DatabaseSeeder.php'),
 
-        'factory'           => database_path('factories/'),
+        'factory' => database_path('factories/'),
 
         'view_provider'     => app_path('Providers/ViewServiceProvider.php'),
     ],
@@ -61,25 +61,25 @@ return [
 
     'namespace' => [
 
-        'model'             => 'App\Model',
+        'model' => 'App\Model',
 
-        'datatables'        => 'App\DataTables',
+        'datatables' => 'App\DataTables',
 
-        'repository'        => 'App\Repositories',
+        'repository' => 'App\Repositories',
 
-        'controller'        => 'App\Http\Controllers',
+        'controller' => 'App\Http\Controllers\Admin',
 
-        'api_controller'    => 'App\Http\Controllers\API',
+        'api_controller' => 'App\Http\Controllers\API',
 
-        'request'           => 'App\Http\Requests',
+        'request' => 'App\Http\Requests\Admin',
 
-        'api_request'       => 'App\Http\Requests\API',
+        'api_request' => 'App\Http\Requests\API',
 
-        'repository_test'   => 'Tests\Repositories',
+        'repository_test' => 'Tests\Repositories',
 
-        'api_test'          => 'Tests\APIs',
+        'api_test' => 'Tests\APIs',
 
-        'tests'             => 'Tests',
+        'tests' => 'Tests',
     ],
 
     /*
@@ -168,9 +168,9 @@ return [
 
         'menu'          => [
 
-            'enabled'       => true,
+            'enabled' => true,
 
-            'menu_file'     => 'layout/include/sidebar.blade.php',
+            'menu_file' => '../layout/include/sidebar.blade.php',
         ],
     ],
 
