@@ -34,7 +34,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            {!! Form::open(['route' => 'oldPapers.store']) !!}
+                            {!! Form::open(['route' => 'oldPapers.store','files' => true]) !!}
 
                             @include('admin.old_papers.fields')
 

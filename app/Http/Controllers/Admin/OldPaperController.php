@@ -104,6 +104,7 @@ class OldPaperController extends AppBaseController
         $data['pageTitle'] = 'Edit '.'Old Paper';
         $data['menu'] = 'oldPapers';
         $data['oldPaper'] = $this->oldPaperRepository->find($id);
+        $data['paperCategory'] = PaperCategory::pluck('name', 'id');
 
         if (empty($data['oldPaper'])) {
             Flash::error('Old Paper not found');

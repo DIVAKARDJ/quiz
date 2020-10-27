@@ -35,7 +35,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            {!! Form::model($oldPaper, ['route' => ['oldPapers.update', $oldPaper->id], 'method' => 'patch']) !!}
+                            {!! Form::model($oldPaper, ['route' => ['oldPapers.update', $oldPaper->id], 'method' => 'patch','files' => true]) !!}
 
                             @include('admin.old_papers.fields')
 

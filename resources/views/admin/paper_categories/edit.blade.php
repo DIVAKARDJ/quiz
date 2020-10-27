@@ -34,7 +34,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            {!! Form::model($paperCategory, ['route' => ['paperCategories.update', $paperCategory->id], 'method' => 'patch']) !!}
+                            {!! Form::model($paperCategory, ['route' => ['paperCategories.update', $paperCategory->id], 'method' => 'patch','files' => true]) !!}
 
                             @include('admin.paper_categories.fields')
 

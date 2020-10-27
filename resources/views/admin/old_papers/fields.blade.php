@@ -21,7 +21,6 @@
     <div class="form-group col-sm-6">
         {!! Form::label('paper_pdf', 'Paper Pdf:') !!}
         <input name="paper_pdf" type="file" id="input-file-now" class="dropify"
-               value="{{ isset($oldPaper) && !empty($oldPaper->paper_pdf) ? $oldPaper->paper_pdf : ''}}"
                data-default-file="{{isset($oldPaper) && !empty($oldPaper->paper_pdf) ? asset(path_paper_pdf().$oldPaper->paper_pdf) : ''}}"/>
         <div class="clearfix"></div>
     </div>

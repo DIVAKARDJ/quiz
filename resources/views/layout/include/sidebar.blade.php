@@ -21,21 +21,21 @@
             </li>
             <li class="@if(isset($menu) && $menu == 'books') qz-active @endif">
                 <a href="{{ route('books.index') }}">
-                    <span class="flaticon-statistics"></span>{{__('Books')}}
+                    <span class="fa fa-book"></span>{{__('Books')}}
                 </a>
             </li>
             <li class="@if(isset($menu) && $menu == 'paperCategories') qz-active @endif">
                 <a href="{{ route('paperCategories.index') }}">
-                    <span class="flaticon-statistics"></span>{{__('Paper Categories')}}
+                    <span class="fa fa-list-alt"></span>{{__('Paper Categories')}}
                 </a>
             </li>
             <li class="@if(isset($menu) && $menu == 'oldPapers') qz-active @endif">
                 <a href="{{ route('oldPapers.index') }}">
-                    <span class="flaticon-statistics"></span>{{__('Old Papers')}}
+                    <span class="fa fa-files-o"></span>{{__('Old Papers')}}
                 </a>
             </li>
             <li class="@if(isset($menu) && $menu == 'category') qz-active @endif"><a
-                        href="{{ route('qsCategoryList') }}"><span class="flaticon-menu"></span>{{__('Category')}} </a>
+                        href="{{ route('qsCategoryList') }}"><span class="fa fa-th-list"></span>{{__('Category')}} </a>
             </li>
             <li class="@if(isset($menu) && $menu == 'question') qz-active @endif"><a href="{{ route('questionList') }}"><span
                             class="flaticon-info"></span>{{__('Question')}} </a></li>

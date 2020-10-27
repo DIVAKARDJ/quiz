@@ -8,9 +8,16 @@
     <!-- Image Field -->
     <div class="form-group col-sm-6">
         {!! Form::label('image', 'Image:') !!}
-        <input name="image" type="file" id="input-file-now" class="dropify"
-               value="{{ isset($paperCategory) && !empty($paperCategory->image) ? $paperCategory->image : ''}}"
-               data-default-file="{{isset($paperCategory) && !empty($paperCategory->image) ? asset(path_book_category_image().$paperCategory->image) : ''}}"/>
+        <div id="file-upload" class="section">
+            <!--Default version-->
+            <div class="row section">
+                <div class="col-12">
+                    <input name="image" type="file" id="input-file-now" class="dropify"
+                           data-default-file="{{isset($paperCategory) && !empty($paperCategory->image) ? asset(path_book_category_image().$paperCategory->image) : ''}}"/>
+                </div>
+            </div>
+            <!--Default value-->
+        </div>
     </div>
 
     <!-- Status Field -->
