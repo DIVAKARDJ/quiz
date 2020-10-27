@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Repositories\Admin;
+namespace App\Repositories;
 
-use App\Model\PaperCategory;
-use App\Repositories\BaseRepository;
+use App\Model\Admin\Book;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
 /**
- * Class PaperCategoryRepository
- * @package App\Repositories\Admin
- * @version October 26, 2020, 5:29 pm UTC
+ * Class BookRepository
+ * @package App\Repositories
+ * @version October 26, 2020, 3:50 pm UTC
  */
-class PaperCategoryRepository extends BaseRepository
+class BookRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
         'name',
-        'image',
-        'status',
+        'seller_name',
+        'book_pdf',
+        'language',
+        'book_category_id',
     ];
 
     /**
@@ -38,7 +39,7 @@ class PaperCategoryRepository extends BaseRepository
      **/
     public function model()
     {
-        return PaperCategory::class;
+        return Book::class;
     }
 
     public function store($input)
@@ -46,16 +47,16 @@ class PaperCategoryRepository extends BaseRepository
         try {
             DB::beginTransaction();
 
-            if (! empty($input['image'])) {
+            if (! empty($input['book_pdf'])) {
                 $old_img = '';
-                if (! empty($input->image)) {
-                    $old_img = $input->image;
+                if (! empty($input->book_pdf)) {
+                    $old_img = $input->book_pdf;
                 }
-                $input['image'] = fileUpload($input['image'], path_category_image(), $old_img);
+                $input['book_pdf'] = fileUpload($input['book_pdf'], path_book_pdf(), $old_img);
             }
-            $paperCategory = $this->create($input);
+            $book = $this->create($input);
 
-            return $paperCategory;
+            return $book;
         } catch (Exception $e) {
             DB::rollBack();
 
@@ -63,21 +64,21 @@ class PaperCategoryRepository extends BaseRepository
         }
     }
 
-    public function updatePaperCategory($input, $id)
+    public function updateBook($input, $id)
     {
         try {
             DB::beginTransaction();
 
-            if (! empty($input['image'])) {
+            if (! empty($input['book_pdf'])) {
                 $old_img = '';
-                if (! empty($input->image)) {
-                    $old_img = $input->image;
+                if (! empty($input->book_pdf)) {
+                    $old_img = $input->book_pdf;
                 }
-                $input['image'] = fileUpload($input['image'], path_category_image(), $old_img);
+                $input['book_pdf'] = fileUpload($input['book_pdf'], path_book_pdf(), $old_img);
             }
-            $paperCategory = $this->update($input, $id);
+            $book = $this->update($input, $id);
 
-            return $paperCategory;
+            return $book;
         } catch (Exception $e) {
             DB::rollBack();
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Admin\CreatePaperCategoryRequest;
 use App\Http\Requests\Admin\UpdatePaperCategoryRequest;
 use App\Model\PaperCategory;
-use App\Repositories\Admin\PaperCategoryRepository;
+use App\Repositories\PaperCategoryRepository;
 use Flash;
 use Illuminate\Http\Request;
 use Response;

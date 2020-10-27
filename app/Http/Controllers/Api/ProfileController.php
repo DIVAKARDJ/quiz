@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Model\UserAnswer;
-use App\Repository\UserRepository;
+use App\Repositories\UserRepository;
 use App\Services\PointService;
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -29,11 +28,11 @@ class ProfileController extends Controller
     {
         $data = ['success' => false, 'data' => [], 'message' => __('Invalid User')];
 
- /*       $scores = UserAnswer::select(DB::raw('SUM(point) as score'), DB::raw('DATE_FORMAT(created_at,\'%Y-%m-%d\') AS "date"'))
-            ->where('user_id', Auth::user()->id)
-            ->where('created_at', '>=', DB::raw('DATE(NOW()) - INTERVAL 7 DAY'))
-            ->groupBy(DB::raw('DATE_FORMAT(created_at,\'%Y-%m-%d\')'))
-            ->get();*/
+        /*       $scores = UserAnswer::select(DB::raw('SUM(point) as score'), DB::raw('DATE_FORMAT(created_at,\'%Y-%m-%d\') AS "date"'))
+                   ->where('user_id', Auth::user()->id)
+                   ->where('created_at', '>=', DB::raw('DATE(NOW()) - INTERVAL 7 DAY'))
+                   ->groupBy(DB::raw('DATE_FORMAT(created_at,\'%Y-%m-%d\')'))
+                   ->get();*/
         $scores = UserAnswer::join('questions', 'questions.id', '=', 'user_answers.question_id')
             ->select(DB::raw('SUM(questions.point) as total_score'),DB::raw('SUM(user_answers.point) as score'), DB::raw('DATE_FORMAT(user_answers.created_at,\'%Y-%m-%d\') AS "date"'))
             ->where('user_answers.user_id', Auth::user()->id)
@@ -44,9 +43,9 @@ class ProfileController extends Controller
         if(isset($scores)) {
             foreach ($scores as $score) {
                 $items[] = [
-                    'date' => date('d M y', strtotime($score->date)),
-                    'score' => $score->score,
-                    'total_score' => $score->total_score,
+                    'date'             => date('d M y', strtotime($score->date)),
+                    'score'            => $score->score,
+                    'total_score'      => $score->total_score,
                     'score_percentage' => ($score->score * 100 )/$score->total_score
                 ];
             }
@@ -91,6 +90,7 @@ class ProfileController extends Controller
             $data['success'] = true;
             $data['message'] = __('Successfull');
         }
+
         return response()->json($data);
     }
 
@@ -153,8 +153,8 @@ class ProfileController extends Controller
     public function changePassword(Request $request)
     {
         $rules = [
-            'old_password' => 'required',
-            'password' => 'required|confirmed|min:6',
+            'old_password'          => 'required',
+            'password'              => 'required|confirmed|min:6',
             'password_confirmation' => 'required'
         ];
         $messages = [
@@ -195,8 +195,8 @@ class ProfileController extends Controller
         if(!empty(language())) {
             foreach (language() as $val) {
                 $item[] = [
-                    'key' =>$val,
-                    'value'=>langName($val)
+                    'key'   =>$val,
+                    'value' =>langName($val)
                 ];
             }
             if(!empty($item)) {
@@ -209,6 +209,7 @@ class ProfileController extends Controller
             $data['success'] = true;
             $data['message'] = __('Successfull');
         }
+
         return response()->json($data);
     }
 

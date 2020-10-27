@@ -1,28 +1,27 @@
 <?php
 
-namespace App\Repositories\Admin;
+namespace App\Repositories;
 
-use App\Model\Admin\Book;
-use App\Repositories\BaseRepository;
+use App\Model\OldPaper;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
 /**
- * Class BookRepository
- * @package App\Repositories\Admin
- * @version October 26, 2020, 3:50 pm UTC
+ * Class OldPaperRepository
+ * @package App\Repositories
+ * @version October 26, 2020, 6:27 pm UTC
  */
-class BookRepository extends BaseRepository
+class OldPaperRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
+        'paper_category_id',
         'name',
-        'seller_name',
-        'book_pdf',
+        'creator_name',
+        'paper_pdf',
         'language',
-        'book_category_id',
     ];
 
     /**
@@ -40,7 +39,7 @@ class BookRepository extends BaseRepository
      **/
     public function model()
     {
-        return Book::class;
+        return OldPaper::class;
     }
 
     public function store($input)
@@ -48,12 +47,12 @@ class BookRepository extends BaseRepository
         try {
             DB::beginTransaction();
 
-            if (! empty($input['book_pdf'])) {
+            if (! empty($input['paper_pdf'])) {
                 $old_img = '';
-                if (! empty($input->book_pdf)) {
-                    $old_img = $input->book_pdf;
+                if (! empty($input->paper_pdf)) {
+                    $old_img = $input->paper_pdf;
                 }
-                $input['book_pdf'] = fileUpload($input['book_pdf'], path_book_pdf(), $old_img);
+                $input['paper_pdf'] = fileUpload($input['paper_pdf'], path_paper_pdf(), $old_img);
             }
             $book = $this->create($input);
 
@@ -65,17 +64,17 @@ class BookRepository extends BaseRepository
         }
     }
 
-    public function updateBook($input, $id)
+    public function updateOldPaper($input, $id)
     {
         try {
             DB::beginTransaction();
 
-            if (! empty($input['book_pdf'])) {
+            if (! empty($input['paper_pdf'])) {
                 $old_img = '';
-                if (! empty($input->book_pdf)) {
-                    $old_img = $input->book_pdf;
+                if (! empty($input->paper_pdf)) {
+                    $old_img = $input->paper_pdf;
                 }
-                $input['book_pdf'] = fileUpload($input['book_pdf'], path_book_pdf(), $old_img);
+                $input['paper_pdf'] = fileUpload($input['paper_pdf'], path_paper_pdf(), $old_img);
             }
             $book = $this->update($input, $id);
 

@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UnlockRequest;
 use App\Model\Category;
-use App\Repository\QuestionRepository;
+use App\Repositories\QuestionRepository;
 use App\Services\CommonService;
 use App\Services\PointService;
-use App\User;
-use DateTime;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 

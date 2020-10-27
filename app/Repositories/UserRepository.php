@@ -1,14 +1,13 @@
 <?php
-namespace App\Repository;
+namespace App\Repositories;
+
 use App\Model\Deposit;
 use App\Model\UserActivity;
 use App\Model\UserInfo;
-use App\Model\UserVerificationCode;
 use App\Model\Wallet;
 use App\Model\Withdrawal;
 use App\Services\SmsService;
 use App\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Jenssegers\Agent\Agent;
 

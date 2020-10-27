@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserSaveRequest;
 use App\Http\Requests\Admin\UserUpdateRequest;
-use App\Repository\UserRepository;
+use App\Repositories\UserRepository;
 use App\Services\CommonService;
 use App\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -31,6 +30,7 @@ class UserController extends Controller
 
         return $key;
     }
+
     /*
      * userList
      *
@@ -49,6 +49,7 @@ class UserController extends Controller
 
         return view('admin.user.list', $data);
     }
+
     /*
      * userDetails
      *
@@ -84,6 +85,7 @@ class UserController extends Controller
         if (!empty($affected_row)) {
             return redirect()->back()->with('success', 'Made Admin successfully.');
         }
+
         return redirect()->back()->with('dismiss', 'Operation failed !');
     }
 
@@ -104,6 +106,7 @@ class UserController extends Controller
         if (!empty($affected_row)) {
             return redirect()->back()->with('success', 'Made user successfully.');
         }
+
         return redirect()->back()->with('dismiss', 'Operation failed !');
     }
 
@@ -164,6 +167,7 @@ class UserController extends Controller
 
             return redirect()->back()->withInput()->with('dismiss', $response['message']);
         }
+
         return redirect()->back();
     }
 
@@ -214,6 +218,7 @@ class UserController extends Controller
                 return redirect()->back()->with(['dismiss' => __('Something went wrong. Please try again later!')]);
             }
         }
+
         return redirect()->back();
     }
 
@@ -240,6 +245,7 @@ class UserController extends Controller
                 return redirect()->back()->with(['dismiss' => __('Something went wrong. Please try again later!')]);
             }
         }
+
         return redirect()->back();
     }
 }

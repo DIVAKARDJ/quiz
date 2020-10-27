@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\User\AnswerRequest;
 use App\Model\QuestionTime;
 use App\Model\UserAnswer;
-use App\Repository\QuestionRepository;
+use App\Repositories\QuestionRepository;
 use App\Services\CommonService;
 use App\Services\PointService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -42,14 +42,14 @@ class QuestionController extends Controller
             $data['totalCoin'] = (session()->has('totalCoin')) ? Session::get('totalCoin') : 0;
 
             $alreadyAddedExpireTime = QuestionTime::where(['user_id' => Auth::user()->id,
-                'question_id' => $data['question']['id'], ])->first();
+                                                           'question_id' => $data['question']['id'], ])->first();
             if(session()->has('quizTestId')) {
                 $data['alreadyPlayed'] = UserAnswer::where(['user_id' => Auth::user()->id, 'question_id' => $id, 'quiz_id' => Session::get('quizTestId')])->first();
             }
 //            dd($data['alreadyPlayed'],Session::get('quizTestId'));
             if (empty($alreadyAddedExpireTime)) {
                 $timeData = [
-                    'user_id' => Auth::user()->id,
+                    'user_id'     => Auth::user()->id,
                     'question_id' => $data['question']['id'],
                     'expire_time' => Carbon::now()->addMinute($data['question']['time_limit'])
                 ];
@@ -104,6 +104,7 @@ class QuestionController extends Controller
             $qId = app(CommonService::class)->checkValidId($request->qId);
             if (is_array($qId)) {
                 $data = ['success' => false, 'message' => __('Question not found.')];
+
                 return response()->json($data);
             }
             $response = app(QuestionRepository::class)->showHints($qId);
@@ -111,9 +112,11 @@ class QuestionController extends Controller
             return response()->json($response);
         } else {
             $data = ['success' => false, 'message' => __('Question id is required')];
+
             return response()->json($data);
         }
     }
+
     /**
      * show fifty fifty option
      *
@@ -126,6 +129,7 @@ class QuestionController extends Controller
             $qId = app(CommonService::class)->checkValidId($request->qId);
             if (is_array($qId)) {
                 $data = ['success' => false, 'message' => __('Question not found.')];
+
                 return response()->json($data);
             }
             $response = app(QuestionRepository::class)->fiftyFiftyOption($qId);
@@ -133,6 +137,7 @@ class QuestionController extends Controller
             return response()->json($response);
         } else {
             $data = ['success' => false, 'message' => __('Question id is required')];
+
             return response()->json($data);
         }
     }

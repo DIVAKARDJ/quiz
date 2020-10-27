@@ -1,5 +1,6 @@
 <?php
-namespace App\Repository;
+namespace App\Repositories;
+
 use App\Model\Category;
 use App\Model\CategoryUnlock;
 use App\Model\Question;
@@ -13,7 +14,6 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 

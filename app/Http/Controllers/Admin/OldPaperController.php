@@ -6,7 +6,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Admin\CreateOldPaperRequest;
 use App\Http\Requests\Admin\UpdateOldPaperRequest;
 use App\Model\PaperCategory;
-use App\Repositories\Admin\OldPaperRepository;
+use App\Repositories\OldPaperRepository;
 use Flash;
 use Illuminate\Http\Request;
 use Response;

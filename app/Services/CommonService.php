@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Model\AffiliationCode;
-use App\Model\Coin;
 use App\Model\Deposit;
 use App\Model\QuestionOption;
 use App\Model\UserCoin;
@@ -13,13 +12,12 @@ use App\Model\UserVerificationCode;
 use App\Model\Wallet;
 use App\Model\WalletAddress;
 use App\Model\Withdrawal;
-use App\Repository\AffiliateRepository;
+use App\Repositories\AffiliateRepository;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class CommonService

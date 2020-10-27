@@ -6,7 +6,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Admin\CreateBookRequest;
 use App\Http\Requests\Admin\UpdateBookRequest;
 use App\Model\BookCategory;
-use App\Repositories\Admin\BookRepository;
+use App\Repositories\BookRepository;
 use Flash;
 use Illuminate\Http\Request;
 use Response;

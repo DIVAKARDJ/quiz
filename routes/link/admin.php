@@ -120,4 +120,5 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     // oldPapers route
     Route::resource('oldPapers', 'OldPaperController');
 
+
 });

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Model\UserAnswer;
-use App\Repository\UserRepository;
+use App\Repositories\UserRepository;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -149,8 +149,8 @@ class ProfileController extends Controller
     public function changePassword(Request $request)
     {
         $rules = [
-            'old_password' => 'required',
-            'password' => 'required|confirmed|min:6',
+            'old_password'          => 'required',
+            'password'              => 'required|confirmed|min:6',
             'password_confirmation' => 'required'
         ];
         $messages = [
