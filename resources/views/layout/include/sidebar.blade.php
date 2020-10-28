@@ -109,13 +109,19 @@
                 </a>
                 <ul class="left-menu-p @if(isset($menu) && $menu == 'setting') mm-show submenu-active2 @endif ">
                     <li class="@if(isset($sub_menu) && $sub_menu == 'gsetting') submenu-active @endif ">
-                        <a href="{{route('generalSetting')}}">{{__('General Settings')}}</a>
+                        <a href="{{route('generalSetting')}}">
+                            {{__('General Settings')}}
+                        </a>
                     </li>
                     <li class="@if(isset($sub_menu) && $sub_menu == 'websetting') submenu-active @endif ">
-                        <a href="{{ route('webSetting') }}">{{__('Web Settings')}}</a>
+                        <a href="{{ route('webSetting') }}">
+                            {{__('Web Settings')}}
+                        </a>
                     </li>
                     <li class="@if(isset($sub_menu) && $sub_menu == 'appsetting') submenu-active @endif ">
-                        <a href="{{route('appSetting')}}">{{__('Application Settings')}}</a>
+                        <a href="{{route('appSetting')}}">
+                            {{__('Application Settings')}}
+                        </a>
                     </li>
                 </ul>
             </li>
