@@ -1,6 +1,13 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
-    {!! Form::file('$FIELD_NAME$') !!}
+<div class="form-group">
+    <label>{{__('$FIELD_NAME_TITLE$')}}</label>
+    <div id="file-upload" class="section">
+        <!--Default version-->
+        <div class="row section">
+            <div class="col-12">
+                <input name="image" type="file" id="input-file-now" class="dropify"
+                       data-default-file="{{isset($$MODEL_NAME_CAMEL$) && !empty($$MODEL_NAME_CAMEL$->image) ? asset(path_book_category_image().$$MODEL_NAME_CAMEL$->image) : ''}}"/>
+            </div>
+        </div>
+     </div>
 </div>
-<div class="clearfix"></div>

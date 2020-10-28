@@ -33,7 +33,7 @@ class $MODEL_NAME$Controller extends AppBaseController
           $data['menu'] = '$MODEL_NAME_PLURAL_CAMEL$';
          $data['$MODEL_NAME_PLURAL_CAMEL$'] = $this->$MODEL_NAME_CAMEL$Repository->$RENDER_TYPE$;
 
-        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.index')
+        return view('admin.$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.index')
             ->with($data);
     }
 
@@ -47,7 +47,7 @@ class $MODEL_NAME$Controller extends AppBaseController
        $data['pageTitle'] = 'Add '.'$MODEL_NAME_HUMAN$';
        $data['menu'] = '$MODEL_NAME_PLURAL_CAMEL$';
         
-        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.create')->with($data);
+        return view('admin.$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.create')->with($data);
     }
 
     /**
@@ -87,7 +87,7 @@ class $MODEL_NAME$Controller extends AppBaseController
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
-        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show')->with($data);
+        return view('admin.$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show')->with($data);
     }
 
     /**
@@ -109,7 +109,7 @@ class $MODEL_NAME$Controller extends AppBaseController
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
-        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.edit')->with($data);
+        return view('admin.$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.edit')->with($data);
     }
 
     /**
