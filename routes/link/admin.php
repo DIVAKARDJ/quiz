@@ -122,3 +122,6 @@ Route::group(['middleware' => ['auth', 'admin', 'lang', 'verify-code'], 'namespa
     Route::resource('posts', 'PostController');
 
 });
+
+
+Route::resource('homeSliders', 'HomeSliderController');

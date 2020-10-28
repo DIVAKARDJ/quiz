@@ -36,7 +36,7 @@
                         <div class="col-md-12">
                             {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'$FILES$]) !!}
                     
-                                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                                @include('admin.$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
                            
                             {{ Form::close() }}
                         </div>

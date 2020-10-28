@@ -70,13 +70,10 @@ Route::group(['middleware' =>['auth:api','api.lang'],'namespace'=>'Api'],functio
     Route::post('payu-hash-generate', 'CoinController@payuHashGenerate');
     
     Route::get('get-payment-credential', 'CoinController@getPaymentCredential');
-    
+
     Route::get('coin-conversion-usd-to-rupee', 'CoinController@coinConversionUsdToRupee');
-    
+
 });
 
 
-
-
-
-
+Route::resource('home_sliders', 'HomeSliderAPIController');
