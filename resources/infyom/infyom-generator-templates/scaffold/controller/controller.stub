@@ -60,6 +60,13 @@ class $MODEL_NAME$Controller extends AppBaseController
     public function store(Create$MODEL_NAME$Request $request)
     {
         $input = $request->all();
+        if (isset($input['image']) && !empty($input['image'])) {
+            $old_img = '';
+            if (!empty($request->image)) {
+                $old_img = $request->image;
+            }
+            $input['image'] = fileUpload($input['image'], path_common_image(), $old_img);
+        }
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($input);
 
@@ -129,8 +136,16 @@ class $MODEL_NAME$Controller extends AppBaseController
 
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
+        $input = $request->all();
+        if (isset($input['image']) && !empty($input['image'])) {
+            $old_img = '';
+            if (!empty($request->image)) {
+                $old_img = $request->image;
+            }
+            $input['image'] = fileUpload($input['image'], path_common_image(), $old_img);
+        }
 
-        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->update($request->all(), $id);
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->update($input, $id);
 
         Flash::success('$MODEL_NAME_HUMAN$ updated successfully.');
 

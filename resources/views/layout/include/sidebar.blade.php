@@ -7,13 +7,19 @@
                  @else src="{{asset('assets/images/logo.png')}}" @endif alt="" class="img-fluid">
         </a>
     </div>
-    
+
     <nav>
         <ul id="metismenu">
             <li class="@if(isset($menu) && $menu == 'dashboard') qz-active @endif">
                 <a href="{{ route('adminDashboardView') }}">
                     <span class="flaticon-dashboard"></span>
                     {{__('Dashboard')}}
+                </a>
+            </li>
+
+            <li class="@if(isset($menu) && $menu == 'homeSliders') qz-active @endif">
+                <a href="{{ route('homeSliders.index') }}">
+                    <span class="flaticon-statistics"></span>{{__('Home Sliders')}}
                 </a>
             </li>
 

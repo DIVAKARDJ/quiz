@@ -155,19 +155,28 @@ function get_image_name ($imageUrl)
 
     return $last;
 }
+
 //Advertisement image path
 function path_image()
 {
     return 'uploaded_file/files/img/';
 }
+
+function path_common_image()
+{
+    return 'uploaded_file/files/img/common_image/';
+}
+
 function path_category_image()
 {
     return 'uploaded_file/files/img/category/';
 }
+
 function path_question_image()
 {
     return 'uploaded_file/files/img/question/';
 }
+
 function path_book_category_image()
 {
     return 'uploaded_file/files/img/book_category/';

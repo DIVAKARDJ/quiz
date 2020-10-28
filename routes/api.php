@@ -76,4 +76,3 @@ Route::group(['middleware' =>['auth:api','api.lang'],'namespace'=>'Api'],functio
 });
 
 
-Route::resource('home_sliders', 'HomeSliderAPIController');
