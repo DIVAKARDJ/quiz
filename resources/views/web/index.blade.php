@@ -6,123 +6,126 @@
         <div class="home_slider_container">
 
             <!-- Home Slider -->
+
             <div class="owl-carousel owl-theme home_slider">
 
-                <!-- Home Slider Item -->
-                <div class="owl-item">
-                    <div class="home_slider_background"
-                         style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
-                    <div class="home_slider_content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <div class="home_slider_title">The Premium System Education</div>
-                                    <div class="home_slider_subtitle">Future Of Education Technology</div>
-                                    <div class="home_slider_form_container">
-                                        <form action="#" id="home_search_form_1"
-                                              class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                                            <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <input type="search" class="home_search_input"
-                                                       placeholder="Keyword Search" required="required">
-                                                <select class="dropdown_item_select home_search_input">
-                                                    <option>Category Courses</option>
-                                                    <option>Category</option>
-                                                    <option>Category</option>
-                                                </select>
-                                                <select class="dropdown_item_select home_search_input">
-                                                    <option>Select Price Type</option>
-                                                    <option>Price Type</option>
-                                                    <option>Price Type</option>
-                                                </select>
+                @forelse($homeSliders as $homeSlider)
+                    <div class="owl-item">
+                        <div class="home_slider_background"
+                             style="background-image:url({{ asset(path_common_image().$homeSlider->image) }})"></div>
+                        <div class="home_slider_content">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 text-center">
+                                        <div class="home_slider_title">The Premium System Education</div>
+                                        <div class="home_slider_subtitle">Future Of Education Technology</div>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-center">
+                                        <div class="counter_form position-static p-5">
+                                            <div class="row fill_height">
+                                                <div class="col fill_height">
+                                                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                                                          action="{{ route('loginProcess') }}" method="POST">
+                                                        @csrf
+                                                        <div class="counter_form_title">Login</div>
+
+                                                        <input type="email" name="email"
+                                                               class="counter_input"
+                                                               placeholder="Enter email">
+
+                                                        <input type="password" name="password"
+                                                               class="counter_input"
+                                                               placeholder="Password">
+
+                                                        <button type="submit"
+                                                                class="counter_form_button">{{__('Sign in')}}
+                                                        </button>
+                                                        <button type="button" class="counter_form_button"
+                                                                data-toggle="model" data-target="#exampleModal">
+                                                            Sign Up
+                                                        </button>
+                                                        <div class="qz-user-footer mt-5">
+                                                            <div class=""><a href="http://quiz.test/forget-password">Forgot
+                                                                    Password ?</a></div>
+                                                            <div><a href="http://quiz.test/privacy-and-policy">Privacy
+                                                                    Policy</a> and <a
+                                                                        href="http://quiz.test/terms-and-conditions">Terms
+                                                                    &amp; Conditions</a></div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
                                             </div>
-                                            <button type="submit" class="home_search_button">search</button>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @empty
+                    <div class="owl-item">
+                        <div class="home_slider_background"
+                             style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
+                        <div class="home_slider_content">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 text-center">
+                                        <div class="home_slider_title">The Premium System Education</div>
+                                        <div class="home_slider_subtitle">Future Of Education Technology</div>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-center">
+                                        <div class="counter_form position-static p-5">
+                                            <div class="row fill_height">
+                                                <div class="col fill_height">
+                                                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                                                          action="{{ route('loginProcess') }}" method="POST">
+                                                        @csrf
+                                                        <div class="counter_form_title">Login</div>
 
-                <!-- Home Slider Item -->
-                <div class="owl-item">
-                    <div class="home_slider_background"
-                         style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
-                    <div class="home_slider_content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <div class="home_slider_title">The Premium System Education</div>
-                                    <div class="home_slider_subtitle">Future Of Education Technology</div>
-                                    <div class="home_slider_form_container">
-                                        <form action="#" id="home_search_form_2"
-                                              class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                                            <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <input type="search" class="home_search_input"
-                                                       placeholder="Keyword Search" required="required">
-                                                <select class="dropdown_item_select home_search_input">
-                                                    <option>Category Courses</option>
-                                                    <option>Category</option>
-                                                    <option>Category</option>
-                                                </select>
-                                                <select class="dropdown_item_select home_search_input">
-                                                    <option>Select Price Type</option>
-                                                    <option>Price Type</option>
-                                                    <option>Price Type</option>
-                                                </select>
+                                                        <input type="email" name="email"
+                                                               class="counter_input"
+                                                               placeholder="Enter email">
+
+                                                        <input type="password" name="password"
+                                                               class="counter_input"
+                                                               placeholder="Password">
+
+                                                        <button type="submit"
+                                                                class="counter_form_button">{{__('Sign in')}}
+                                                            now
+                                                        </button>
+                                                        <div class="qz-user-footer mt-5">
+                                                            <h4>Don't have account ? <a href="http://quiz.test/signup">Sign
+                                                                    Up</a></h4>
+                                                            <div class="mt-3"><a
+                                                                        href="http://quiz.test/forget-password">Forgot
+                                                                    Password ?</a></div>
+                                                            <div><a href="http://quiz.test/privacy-and-policy">Privacy
+                                                                    Policy</a> and <a
+                                                                        href="http://quiz.test/terms-and-conditions">Terms
+                                                                    &amp; Conditions</a></div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
                                             </div>
-                                            <button type="submit" class="home_search_button">search</button>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Home Slider Item -->
-                <div class="owl-item">
-                    <div class="home_slider_background"
-                         style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
-                    <div class="home_slider_content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <div class="home_slider_title">The Premium System Education</div>
-                                    <div class="home_slider_subtitle">Future Of Education Technology</div>
-                                    <div class="home_slider_form_container">
-                                        <form action="#" id="home_search_form_3"
-                                              class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                                            <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <input type="search" class="home_search_input"
-                                                       placeholder="Keyword Search" required="required">
-                                                <select class="dropdown_item_select home_search_input">
-                                                    <option>Category Courses</option>
-                                                    <option>Category</option>
-                                                    <option>Category</option>
-                                                </select>
-                                                <select class="dropdown_item_select home_search_input">
-                                                    <option>Select Price Type</option>
-                                                    <option>Price Type</option>
-                                                    <option>Price Type</option>
-                                                </select>
-                                            </div>
-                                            <button type="submit" class="home_search_button">search</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            @endforelse
+
         </div>
 
-        <!-- Home Slider Nav -->
+    </div>
 
-        <div class="home_slider_nav home_slider_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="home_slider_nav home_slider_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <!-- Home Slider Nav -->
+
+    <div class="home_slider_nav home_slider_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+    <div class="home_slider_nav home_slider_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
     </div>
 
     <!-- Features -->
@@ -656,6 +659,6 @@
             </div>
         </div>
     </div>
-
+    @include('web.include.register_model')
 
 @endsection

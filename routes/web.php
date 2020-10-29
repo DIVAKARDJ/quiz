@@ -42,29 +42,27 @@ Route::group(['middleware' => ['check-installer']], function () {
         Route::get('/logout', 'AuthController@logout')->name('logOut');
     });
 });
+Route::group(['namespace' => 'Web'], function () {
 
-// web route 
-Route::get('/', function () {
-    return view('web.index');
-})->name('web.home');
+    Route::get('/', 'IndexController@index')->name('web.home');
 
-Route::get('/about', function () {
-    return view('web.about');
-})->name('web.about');
+    Route::get('/about', function () {
+        return view('web.about');
+    })->name('web.about');
 
+    Route::get('/courses', function () {
+        return view('web.courses');
+    })->name('web.courses');
 
-Route::get('/courses', function () {
-    return view('web.courses');
-})->name('web.courses');
+    Route::get('/blog', function () {
+        return view('web.blog');
+    })->name('web.blog');
 
+    Route::get('/contact', function () {
+        return view('web.contact');
+    })->name('web.contact');
+});
 
-Route::get('/blog', function () {
-    return view('web.blog');
-})->name('web.blog');
-
-Route::get('/contact', function () {
-    return view('web.contact');
-})->name('web.contact');
 
 Route::get('generator_builder',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
