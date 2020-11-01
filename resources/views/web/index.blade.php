@@ -41,9 +41,37 @@
                                                                 class="counter_form_button">{{__('Sign in')}}
                                                         </button>
                                                         <button type="button" class="counter_form_button"
-                                                                data-toggle="model" data-target="#exampleModal">
+                                                                data-toggle="model" data-target="#signupModal">
                                                             Sign Up
                                                         </button>
+                                                        <button type="button" class="btn btn-info btn-lg"
+                                                                data-toggle="modal" data-target="#myModal">Open Modal
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <div id="myModal" class="modal fade" role="dialog">
+                                                            <div class="modal-dialog">
+
+                                                                <!-- Modal content-->
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close"
+                                                                                data-dismiss="modal">&times;
+                                                                        </button>
+                                                                        <h4 class="modal-title">Modal Header</h4>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>Some text in the modal.</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default"
+                                                                                data-dismiss="modal">Close
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
                                                         <div class="qz-user-footer mt-5">
                                                             <div class=""><a href="http://quiz.test/forget-password">Forgot
                                                                     Password ?</a></div>
