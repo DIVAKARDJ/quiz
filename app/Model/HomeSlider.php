@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class HomeSlider
@@ -14,12 +13,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class HomeSlider extends Model
 {
-    use SoftDeletes;
 
     public $table = 'home_sliders';
-
-
-    protected $dates = ['deleted_at'];
 
 
     public $fillable = [

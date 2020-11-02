@@ -12,7 +12,7 @@
                 @forelse($homeSliders as $homeSlider)
                     <div class="owl-item">
                         <div class="home_slider_background"
-                             style="background-image:url({{ asset(path_common_image().$homeSlider->image) }})"></div>
+                            style="background-image:url({{ asset(path_common_image() . $homeSlider->image) }})"></div>
                         <div class="home_slider_content">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -24,28 +24,26 @@
                                         <div class="counter_form position-static p-5">
                                             <div class="row fill_height">
                                                 <div class="col fill_height">
-                                                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                                                          action="{{ route('loginProcess') }}" method="POST">
+                                                    <form
+                                                        class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                                                        action="{{ route('loginProcess') }}" method="POST">
                                                         @csrf
                                                         <div class="counter_form_title">Login</div>
 
-                                                        <input type="email" name="email"
-                                                               class="counter_input"
-                                                               placeholder="Enter email">
+                                                        <input type="email" name="email" class="counter_input"
+                                                            placeholder="Enter email">
 
-                                                        <input type="password" name="password"
-                                                               class="counter_input"
-                                                               placeholder="Password">
+                                                        <input type="password" name="password" class="counter_input"
+                                                            placeholder="Password">
 
-                                                        <button type="submit"
-                                                                class="counter_form_button">{{__('Sign in')}}
+                                                        <button type="submit" class="counter_form_button">{{ __('Sign in') }}
                                                         </button>
-                                                        <button type="button" class="counter_form_button"
-                                                                data-toggle="model" data-target="#signupModal">
+                                                        <button type="button" class="counter_form_button" data-toggle="model"
+                                                            data-target="#signupModal">
                                                             Sign Up
                                                         </button>
-                                                        <button type="button" class="btn btn-info btn-lg"
-                                                                data-toggle="modal" data-target="#myModal">Open Modal
+                                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                                                            data-target="#myModal">Open Modal
                                                         </button>
 
                                                         <!-- Modal -->
@@ -56,7 +54,7 @@
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
                                                                         <button type="button" class="close"
-                                                                                data-dismiss="modal">&times;
+                                                                            data-dismiss="modal">&times;
                                                                         </button>
                                                                         <h4 class="modal-title">Modal Header</h4>
                                                                     </div>
@@ -65,7 +63,7 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-default"
-                                                                                data-dismiss="modal">Close
+                                                                            data-dismiss="modal">Close
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -77,7 +75,7 @@
                                                                     Password ?</a></div>
                                                             <div><a href="http://quiz.test/privacy-and-policy">Privacy
                                                                     Policy</a> and <a
-                                                                        href="http://quiz.test/terms-and-conditions">Terms
+                                                                    href="http://quiz.test/terms-and-conditions">Terms
                                                                     &amp; Conditions</a></div>
                                                         </div>
                                                     </form>
@@ -93,7 +91,7 @@
                 @empty
                     <div class="owl-item">
                         <div class="home_slider_background"
-                             style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
+                            style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
                         <div class="home_slider_content">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -105,34 +103,43 @@
                                         <div class="counter_form position-static p-5">
                                             <div class="row fill_height">
                                                 <div class="col fill_height">
-                                                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                                                          action="{{ route('loginProcess') }}" method="POST">
+                                                    <form
+                                                        class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                                                        action="{{ route('loginProcess') }}" method="POST">
                                                         @csrf
                                                         <div class="counter_form_title">Login</div>
 
-                                                        <input type="email" name="email"
-                                                               class="counter_input"
-                                                               placeholder="Enter email">
+                                                        <input type="email" name="email" class="counter_input"
+                                                            placeholder="Enter email">
 
-                                                        <input type="password" name="password"
-                                                               class="counter_input"
-                                                               placeholder="Password">
+                                                        <input type="password" name="password" class="counter_input"
+                                                            placeholder="Password">
 
-                                                        <button type="submit"
-                                                                class="counter_form_button">{{__('Sign in')}}
-                                                            now
+
+                                                        <button type="button" class="counter_form_button" data-toggle="model"
+                                                            data-target="#signupModal">
+                                                            Login
                                                         </button>
+                                                        <button type="button" class="counter_form_button" id="btnSingup"
+                                                            data-toggle="modal" data-target="#myModal">Sign Up
+                                                        </button>
+
+                                                        
+
                                                         <div class="qz-user-footer mt-5">
-                                                            <h4>Don't have account ? <a href="http://quiz.test/signup">Sign
-                                                                    Up</a></h4>
-                                                            <div class="mt-3"><a
-                                                                        href="http://quiz.test/forget-password">Forgot
-                                                                    Password ?</a></div>
-                                                            <div><a href="http://quiz.test/privacy-and-policy">Privacy
-                                                                    Policy</a> and <a
-                                                                        href="http://quiz.test/terms-and-conditions">Terms
-                                                                    &amp; Conditions</a></div>
+                                                            
+                                                            <span class="text-left">
+                                                                @include('layout.message')
+                                                            </span>
+
+                                                            <div class="mt-3"><a href="http://quiz.test/forget-password">forgot
+                                                                    password ?</a></div>
+                                                            <div><a href="http://quiz.test/privacy-and-policy">privacy
+                                                                    policy</a> and <a
+                                                                    href="http://quiz.test/terms-and-conditions">terms
+                                                                    &amp; conditions</a></div>
                                                         </div>
+                                                        
                                                     </form>
 
                                                 </div>
@@ -143,12 +150,49 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
             @endforelse
 
         </div>
 
     </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;
+                    </button>
+
+                </div>
+                <div class="modal-body">
+                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+                        action="{{ route('userSave') }}" method="POST">
+                        
+                        @csrf
+                        <input type="text" name="name" class="counter_input" placeholder="Username">
+
+                        <input type="hidden" name="referral_code" value="{{$referral_code ?? ''}}">
+
+                        <input type="email" name="email" class="counter_input" placeholder="Enter email">
+
+                        <input type="password" name="password" class="counter_input" placeholder="Password">
+
+                        <input type="password" class="counter_input" name="password_confirmation" placeholder="Confirm Password">
+
+                        <input type="text" name="phone" class="counter_input" placeholder="Phone">
+
+                        <button type="submit" class="counter_form_button">{{__('Sign Up')}}</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <!-- Home Slider Nav -->
 
@@ -164,9 +208,11 @@
                 <div class="col">
                     <div class="section_title_container text-center">
                         <h2 class="section_title">Welcome To Unicat E-Learning</h2>
-                        <div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                        <div class="section_subtitle">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                                 vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit
-                                venenatis sem</p></div>
+                                venenatis sem</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,7 +223,9 @@
                     <div class="feature text-center trans_400">
                         <div class="feature_icon"><img src="{{ asset('web_assets/images/icon_1.png') }}" alt=""></div>
                         <h3 class="feature_title">The Experts</h3>
-                        <div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                        <div class="feature_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </div>
                     </div>
                 </div>
 
@@ -186,7 +234,9 @@
                     <div class="feature text-center trans_400">
                         <div class="feature_icon"><img src="{{ asset('web_assets/images/icon_2.png') }}" alt=""></div>
                         <h3 class="feature_title">Book & Library</h3>
-                        <div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                        <div class="feature_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </div>
                     </div>
                 </div>
 
@@ -195,7 +245,9 @@
                     <div class="feature text-center trans_400">
                         <div class="feature_icon"><img src="{{ asset('web_assets/images/icon_3.png') }}" alt=""></div>
                         <h3 class="feature_title">Best Courses</h3>
-                        <div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                        <div class="feature_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </div>
                     </div>
                 </div>
 
@@ -204,7 +256,9 @@
                     <div class="feature text-center trans_400">
                         <div class="feature_icon"><img src="{{ asset('web_assets/images/icon_4.png') }}" alt=""></div>
                         <h3 class="feature_title">Award & Reward</h3>
-                        <div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
+                        <div class="feature_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </div>
                     </div>
                 </div>
 
@@ -216,15 +270,17 @@
 
     <div class="courses">
         <div class="section_background parallax-window" data-parallax="scroll"
-             data-image-src="{{ asset('web_assets/images/courses_background.jpg') }}" data-speed="0.8"></div>
+            data-image-src="{{ asset('web_assets/images/courses_background.jpg') }}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="section_title_container text-center">
                         <h2 class="section_title">Popular Online Courses</h2>
-                        <div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                        <div class="section_subtitle">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                                 vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit
-                                venenatis sem</p></div>
+                                venenatis sem</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -324,15 +380,17 @@
 
     <div class="counter">
         <div class="counter_background"
-             style="background-image:url({{ asset('web_assets/images/counter_background.jpg')}})"></div>
+            style="background-image:url({{ asset('web_assets/images/counter_background.jpg') }})"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="counter_content">
                         <h2 class="counter_title">Register Now</h2>
-                        <div class="counter_text"><p>Simply dummy text of the printing and typesetting industry. Lorem
+                        <div class="counter_text">
+                            <p>Simply dummy text of the printing and typesetting industry. Lorem
                                 Ipsum has been the industry’s standard dumy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book.</p></div>
+                                printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
 
                         <!-- Milestones -->
 
@@ -372,7 +430,7 @@
                 <div class="row fill_height">
                     <div class="col fill_height">
                         <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                              action="#">
+                            action="#">
                             <div class="counter_form_title">courses now</div>
                             <input type="text" class="counter_input" placeholder="Your Name:" required="required">
                             <input type="tel" class="counter_input" placeholder="Phone:" required="required">
@@ -383,7 +441,7 @@
                                 <option>Subject</option>
                             </select>
                             <textarea class="counter_input counter_text_input" placeholder="Message:"
-                                      required="required"></textarea>
+                                required="required"></textarea>
                             <button type="submit" class="counter_form_button">submit now</button>
                         </form>
                     </div>
@@ -401,9 +459,11 @@
                 <div class="col">
                     <div class="section_title_container text-center">
                         <h2 class="section_title">Upcoming events</h2>
-                        <div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                        <div class="section_subtitle">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                                 vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit
-                                venenatis sem</p></div>
+                                venenatis sem</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -423,9 +483,11 @@
                             <div class="event_content">
                                 <div class="event_title"><a href="#">Which Country Handles Student Debt?</a></div>
                                 <div class="event_info_container">
-                                    <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>15.00 - 19.30</span>
+                                    <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>15.00 -
+                                            19.30</span>
                                     </div>
-                                    <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span>
+                                    <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New
+                                            York City</span>
                                     </div>
                                     <div class="event_text">
                                         <p>Policy analysts generally agree on a need for reform, but not on which
@@ -452,9 +514,11 @@
                                 <div class="event_title"><a href="#">Repaying your student loans (Winter 2017-2018)</a>
                                 </div>
                                 <div class="event_info_container">
-                                    <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00 - 17.30</span>
+                                    <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00 -
+                                            17.30</span>
                                     </div>
-                                    <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Brooklyn City</span>
+                                    <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25
+                                            Brooklyn City</span>
                                     </div>
                                     <div class="event_text">
                                         <p>This Consumer Action News issue covers topics now being debated before...</p>
@@ -479,9 +543,11 @@
                             <div class="event_content">
                                 <div class="event_title"><a href="#">Alternative data and financial inclusion</a></div>
                                 <div class="event_info_container">
-                                    <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00 - 18.30</span>
+                                    <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00 -
+                                            18.30</span>
                                     </div>
-                                    <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span>
+                                    <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New
+                                            York City</span>
                                     </div>
                                     <div class="event_text">
                                         <p>Policy analysts generally agree on a need for reform, but not on which
@@ -501,16 +567,17 @@
 
     <div class="team">
         <div class="team_background parallax-window" data-parallax="scroll"
-             data-image-src="{{ asset('web_assets/images/team_background.jpg') }}"
-             data-speed="0.8"></div>
+            data-image-src="{{ asset('web_assets/images/team_background.jpg') }}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="section_title_container text-center">
                         <h2 class="section_title">The Best Tutors in Town</h2>
-                        <div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                        <div class="section_subtitle">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                                 vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit
-                                venenatis sem</p></div>
+                                venenatis sem</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -600,9 +667,11 @@
                 <div class="col">
                     <div class="section_title_container text-center">
                         <h2 class="section_title">Latest News</h2>
-                        <div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                        <div class="section_subtitle">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                                 vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit
-                                venenatis sem</p></div>
+                                venenatis sem</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -687,6 +756,12 @@
             </div>
         </div>
     </div>
-    @include('web.include.register_model')
+    {{-- @include('web.include.register_model') --}}
 
 @endsection
+@push('page-js')
+    <script>
+
+
+    </script>
+@endpush

@@ -36,7 +36,7 @@
 <!-- Footer -->
 
 <footer class="footer">
-    <div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+    <div class="footer_background" style="background-image:url({{ asset('web_assets/images/footer_background.png') }})"></div>
     <div class="container">
         <div class="row footer_row">
             <div class="col">

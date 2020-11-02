@@ -4,9 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreateHomeSildersTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,9 +13,9 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('home_sliders', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name');
+            $table->text('image');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('posts');
+        Schema::dropIfExists('home_silders');
     }
 }
