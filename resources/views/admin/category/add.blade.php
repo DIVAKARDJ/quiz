@@ -57,7 +57,8 @@
                                                     @foreach($parentCategories as $value)
                                                         <option @if(isset($category) && ($category->parent_id == $value->id)) selected
                                                                 @elseif(isset($parentId) && ($parentId->id == $value->id)) selected
-                                                                @elseif((old('parent_id') != null) && (old('parent_id') == $value->id)) selected @endif value="{{ $value->id }}">{{$value->name}}</option>
+                                                                @elseif((old('parent_id') != null) && (old('parent_id') == $value->id)) selected
+                                                                @endif value="{{ $value->id }}">{{$value->name}}</option>
                                                     @endforeach
                                                 @endif
                                             </select>
@@ -67,7 +68,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{__('Coin')}}<span class="text-danger"></span></label>
-                                        <input type="text" @if(isset($category)) value="{{$category->coin}}" @else value="{{old('coin')}}" @endif name="coin" class="form-control" placeholder="Coin">
+                                        <input type="number" @if(isset($category)) value="{{$category->coin}}"
+                                               @else value="{{old('coin')}}" @endif name="coin" class="form-control"
+                                               placeholder="Coin">
                                         @if ($errors->has('coin'))
                                             <span class="text-danger">
                                             <strong>{{ $errors->first('coin') }}</strong>
@@ -78,7 +81,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{__('Question limit')}}<span class="text-danger">*</span></label>
-                                        <input type="text" @if(isset($category)) value="{{$category->max_limit}}" @else value="{{old('max_limit')}}" @endif name="max_limit" class="form-control" placeholder="Question Limit for category">
+                                        <input type="number" @if(isset($category)) value="{{$category->max_limit}}"
+                                               @else value="{{old('max_limit')}}" @endif name="max_limit" min="1"
+                                               class="form-control" placeholder="Question Limit for category">
                                         @if ($errors->has('max_limit'))
                                             <span class="text-danger">
                                             <strong>{{ $errors->first('max_limit') }}</strong>
@@ -89,7 +94,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{__('Quiz limit')}}<span class="text-danger">*</span></label>
-                                        <input type="text" @if(isset($category)) value="{{$category->qs_limit}}" @else value="{{old('qs_limit')}}" @endif name="qs_limit" class="form-control" placeholder="Question limit for per Quiz test">
+                                        <input type="number" @if(isset($category)) value="{{$category->qs_limit}}"
+                                               @else value="{{old('qs_limit')}}" @endif name="qs_limit" min="1"
+                                               max="100" class="form-control"
+                                               placeholder="Question limit for per Quiz test">
                                         @if ($errors->has('qs_limit'))
                                             <span class="text-danger">
                                             <strong>{{ $errors->first('qs_limit') }}</strong>
@@ -100,7 +108,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{__('Time limit')}}<span class="text-danger">*</span></label>
-                                        <input type="text" @if(isset($category)) value="{{$category->time_limit}}" @else value="{{old('time_limit')}}" @endif name="time_limit" class="form-control" placeholder="Time limit(in minute) for per question in category">
+                                        <input type="number" @if(isset($category)) value="{{$category->time_limit}}"
+                                               @else value="{{old('time_limit')}}" @endif name="time_limit" min="0"
+                                               max="20" class="form-control"
+                                               placeholder="Time limit(in minute) for per question in category">
                                         @if ($errors->has('time_limit'))
                                             <span class="text-danger">
                                             <strong>{{ $errors->first('time_limit') }}</strong>
@@ -111,7 +122,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{__('Serial')}}<span class="text-danger">*</span></label>
-                                        <input type="text" @if(isset($category)) value="{{$category->serial}}" @else value="{{old('serial')}}" @endif name="serial" class="form-control" placeholder="Priority">
+                                        <input type="number" @if(isset($category)) value="{{$category->serial}}"
+                                               @else value="{{old('serial')}}" @endif name="serial" class="form-control"
+                                               placeholder="Priority">
                                         @if ($errors->has('serial'))
                                             <span class="text-danger">
                                             <strong>{{ $errors->first('serial') }}</strong>

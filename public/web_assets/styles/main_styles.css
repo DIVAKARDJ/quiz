@@ -444,7 +444,7 @@ section {
     margin-right: 44px;
 }
 
-.main_nav li a {
+.main_nav li a, .nav-tabs li a {
     font-size: 18px;
     font-weight: 500;
     color: #384158;
@@ -456,13 +456,12 @@ section {
 }
 
 .main_nav li a:hover,
-.main_nav li.active a {
-    color: #14bdee;
+.main_nav li.active a, .nav-tabs li a.active {
+    color: #14bdee !important;
 }
 
-.main_nav li.active::after {
+.main_nav li.active::after, .nav-tabs li a.active::after {
     display: block;
-    position: absolute;
     bottom: -2px;
     left: 0;
     width: 100%;
@@ -2020,4 +2019,13 @@ section {
 
 .cr_list li a:hover {
     color: #14bdee;
+}
+
+.category_name {
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link {
+    border: none !important;
 }

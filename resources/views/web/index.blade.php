@@ -1,205 +1,15 @@
 @extends('web.layouts.app')
 @section('main-body')
     <!-- Home -->
-
     <div class="home">
-        <div class="home_slider_container">
-
-            <!-- Home Slider -->
-
-            <div class="owl-carousel owl-theme home_slider">
-
-                @forelse($homeSliders as $homeSlider)
-                    <div class="owl-item">
-                        <div class="home_slider_background"
-                            style="background-image:url({{ asset(path_common_image() . $homeSlider->image) }})"></div>
-                        <div class="home_slider_content">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-6 text-center">
-                                        <div class="home_slider_title">The Premium System Education</div>
-                                        <div class="home_slider_subtitle">Future Of Education Technology</div>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-center">
-                                        <div class="counter_form position-static p-5">
-                                            <div class="row fill_height">
-                                                <div class="col fill_height">
-                                                    <form
-                                                        class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                                                        action="{{ route('loginProcess') }}" method="POST">
-                                                        @csrf
-                                                        <div class="counter_form_title">Login</div>
-
-                                                        <input type="email" name="email" class="counter_input"
-                                                            placeholder="Enter email">
-
-                                                        <input type="password" name="password" class="counter_input"
-                                                            placeholder="Password">
-
-                                                        <button type="submit" class="counter_form_button">{{ __('Sign in') }}
-                                                        </button>
-                                                        <button type="button" class="counter_form_button" data-toggle="model"
-                                                            data-target="#signupModal">
-                                                            Sign Up
-                                                        </button>
-                                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-                                                            data-target="#myModal">Open Modal
-                                                        </button>
-
-                                                        <!-- Modal -->
-                                                        <div id="myModal" class="modal fade" role="dialog">
-                                                            <div class="modal-dialog">
-
-                                                                <!-- Modal content-->
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <button type="button" class="close"
-                                                                            data-dismiss="modal">&times;
-                                                                        </button>
-                                                                        <h4 class="modal-title">Modal Header</h4>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <p>Some text in the modal.</p>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-default"
-                                                                            data-dismiss="modal">Close
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="qz-user-footer mt-5">
-                                                            <div class=""><a href="http://quiz.test/forget-password">Forgot
-                                                                    Password ?</a></div>
-                                                            <div><a href="http://quiz.test/privacy-and-policy">Privacy
-                                                                    Policy</a> and <a
-                                                                    href="http://quiz.test/terms-and-conditions">Terms
-                                                                    &amp; Conditions</a></div>
-                                                        </div>
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @empty
-                    <div class="owl-item">
-                        <div class="home_slider_background"
-                            style="background-image:url({{ asset('web_assets/images/home_slider_1.jpg') }})"></div>
-                        <div class="home_slider_content">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-6 text-center">
-                                        <div class="home_slider_title">The Premium System Education</div>
-                                        <div class="home_slider_subtitle">Future Of Education Technology</div>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-center">
-                                        <div class="counter_form position-static p-5">
-                                            <div class="row fill_height">
-                                                <div class="col fill_height">
-                                                    <form
-                                                        class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                                                        action="{{ route('loginProcess') }}" method="POST">
-                                                        @csrf
-                                                        <div class="counter_form_title">Login</div>
-
-                                                        <input type="email" name="email" class="counter_input"
-                                                            placeholder="Enter email">
-
-                                                        <input type="password" name="password" class="counter_input"
-                                                            placeholder="Password">
-
-
-                                                        <button type="button" class="counter_form_button" data-toggle="model"
-                                                            data-target="#signupModal">
-                                                            Login
-                                                        </button>
-                                                        <button type="button" class="counter_form_button" id="btnSingup"
-                                                            data-toggle="modal" data-target="#myModal">Sign Up
-                                                        </button>
-
-                                                        
-
-                                                        <div class="qz-user-footer mt-5">
-                                                            
-                                                            <span class="text-left">
-                                                                @include('layout.message')
-                                                            </span>
-
-                                                            <div class="mt-3"><a href="http://quiz.test/forget-password">forgot
-                                                                    password ?</a></div>
-                                                            <div><a href="http://quiz.test/privacy-and-policy">privacy
-                                                                    policy</a> and <a
-                                                                    href="http://quiz.test/terms-and-conditions">terms
-                                                                    &amp; conditions</a></div>
-                                                        </div>
-                                                        
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforelse
-
-        </div>
-
-    </div>
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title text-center">Sign Up</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;
-                    </button>
-
-                </div>
-                <div class="modal-body">
-                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                        action="{{ route('userSave') }}" method="POST">
-                        
-                        @csrf
-                        <input type="text" name="name" class="counter_input" placeholder="Username">
-
-                        <input type="hidden" name="referral_code" value="{{$referral_code ?? ''}}">
-
-                        <input type="email" name="email" class="counter_input" placeholder="Enter email">
-
-                        <input type="password" name="password" class="counter_input" placeholder="Password">
-
-                        <input type="password" class="counter_input" name="password_confirmation" placeholder="Confirm Password">
-
-                        <input type="text" name="phone" class="counter_input" placeholder="Phone">
-
-                        <button type="submit" class="counter_form_button">{{__('Sign Up')}}</button>
-
-                    </form>
-                </div>
-            </div>
-
-        </div>
+        @include('web.home.banner')
     </div>
 
+    @include('web.home.register_model')
 
-    <!-- Home Slider Nav -->
+    <!-- Category -->
 
-    <div class="home_slider_nav home_slider_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-    <div class="home_slider_nav home_slider_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-    </div>
-
+    @include('web.home.category_list')
     <!-- Features -->
 
     <div class="features">
@@ -270,7 +80,7 @@
 
     <div class="courses">
         <div class="section_background parallax-window" data-parallax="scroll"
-            data-image-src="{{ asset('web_assets/images/courses_background.jpg') }}" data-speed="0.8"></div>
+             data-image-src="{{ asset('web_assets/images/courses_background.jpg') }}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -380,7 +190,7 @@
 
     <div class="counter">
         <div class="counter_background"
-            style="background-image:url({{ asset('web_assets/images/counter_background.jpg') }})"></div>
+             style="background-image:url({{ asset('web_assets/images/counter_background.jpg') }})"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -430,7 +240,7 @@
                 <div class="row fill_height">
                     <div class="col fill_height">
                         <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
-                            action="#">
+                              action="#">
                             <div class="counter_form_title">courses now</div>
                             <input type="text" class="counter_input" placeholder="Your Name:" required="required">
                             <input type="tel" class="counter_input" placeholder="Phone:" required="required">
@@ -441,7 +251,7 @@
                                 <option>Subject</option>
                             </select>
                             <textarea class="counter_input counter_text_input" placeholder="Message:"
-                                required="required"></textarea>
+                                      required="required"></textarea>
                             <button type="submit" class="counter_form_button">submit now</button>
                         </form>
                     </div>
@@ -567,7 +377,7 @@
 
     <div class="team">
         <div class="team_background parallax-window" data-parallax="scroll"
-            data-image-src="{{ asset('web_assets/images/team_background.jpg') }}" data-speed="0.8"></div>
+             data-image-src="{{ asset('web_assets/images/team_background.jpg') }}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">

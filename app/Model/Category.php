@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name', 'coin', 'description', 'image', 'qs_limit', 'time_limit', 'max_limit', 'serial', 'status','parent_id', 'white_image'];
+    protected $fillable = [
+        'name', 'coin', 'description', 'image', 'qs_limit', 'time_limit', 'max_limit', 'serial', 'status', 'parent_id',
+        'white_image',
+    ];
 
     public function question()
     {
@@ -14,7 +17,8 @@ class Category extends Model
     }
 
     // sub category count
-    public function count_sub_category(){
-        return $this->hasMany(Category::class,'parent_id','id');
+    public function count_sub_category()
+    {
+        return $this->hasMany(Category::class, 'parent_id', 'id');
     }
 }
